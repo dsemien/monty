@@ -1,15 +1,15 @@
-#include "lists.h"
+#include "monty.h"
 /**
  * delete_dnodeint_at_index - deletes node at index
  * @head: pointer to pointer
  * @index: what to delete
  * Return: -1 upon failure, 1 upon success
  **/
-int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
+int delete_dnodeint_at_index(stack_t **head, unsigned int index)
 {
-	dlistint_t *ptr;
+        stack_t *ptr;
 	unsigned int i = 0;
-	dlistint_t *h;
+	stack_t *h;
 
 	h = *head;
 	if (*head == NULL || head == NULL)
