@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <string.h>
 
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -35,4 +36,14 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+/* FUNCTION DEFINTIONS */
+
+typedef void (*instruct)(stack_t **stack, unsigned int count);
+char *line_tok(char *str);
+instruct op_func(char *line);
+void file_open(char *file_name, stack_t **stack);
+void c_nop(__attribute__ ((unused))stack_t **stack, __attribute__ ((unused))unsigned int count);
+
+/* END DEF'S */
 #endif
