@@ -5,7 +5,7 @@
 *
 *
 */
-void c_push(stack_t **stack, __ attribute__ ((unsused))unsigned int line_number)
+void c_push(stack_t **stack, __attribute__ ((unsused))unsigned int line_number)
 {
    stack_t *newNode;
 
@@ -15,14 +15,14 @@ void c_push(stack_t **stack, __ attribute__ ((unsused))unsigned int line_number)
        printf("L%d: usage: push integer\n", line_number);
         exit(EXIT_FAILURE);
    }
-   newNode->n = push_arg;
+   newNode->n = c_push;
    if (*stack == NULL)
       newNode->next = NULL;
       newNode->prev = NULL;
       *stack = newNode;
    else
     *(stack)->prev = newNode;
-    newNode->n = push_arg;
+    newNode->n = c_push;
     newNode->next = *stack;
     newNode->prev = NULL;   
    *stack = newNode;
