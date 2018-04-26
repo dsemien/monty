@@ -5,13 +5,13 @@
  * @n: number to put in node
  * Return: dlistint_t
  **/
-dlistint_t *add_dnodeint(dlistint_t **head, const int n)
+stack_t *add_dnodeint(stack_t **head, const int n)
 {
-	dlistint_t *box;
+	stack_t *box;
 
 	if (head == NULL)
 		return (NULL);
-	box = malloc(sizeof(dlistint_t));
+	box = malloc(sizeof(stack_t));
 	if (box == NULL)
 		return (NULL);
 	box->n = n;
@@ -30,12 +30,12 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
  * @n: number to put in node
  * Return: dlistint_t
  **/
-dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
+stack_t *add_dnodeint_end(stack_t **head, const int n)
 {
-	dlistint_t *new;
-	dlistint_t *current;
+	stack_t *new;
+	stack_t *current;
 
-	new = malloc(sizeof(dlistint_t));
+	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 		return (NULL);
 	new->n = n;
@@ -59,9 +59,9 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
  * free_dlistint - free listint_t
  * @head: takes in listint_t *head
  **/
-void free_dlistint(dlistint_t *head)
+void free_dlistint(stack_t *head)
 {
-	dlistint_t *current;
+        stack_t *current;
 
 	while (head != NULL)
 	{
