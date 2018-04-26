@@ -44,6 +44,11 @@ char *line_tok(char *str);
 instruct op_func(char *line);
 void file_open(char *file_name, stack_t **stack);
 void c_nop(__attribute__ ((unused))stack_t **stack, __attribute__ ((unused))unsigned int count);
+void c_push(stack_t **stack, __ attribute__ ((unsused))unsigned int line_number);
+void c_pall(stack_t **stack, __attribute__ ((unsused))unsigned int line_number);
+void c_pint(stack_t **stack, unsigned int line_number);
+void c_pop(stack_t **stack, unsigned int line_number);
+
 
 /* END DEF'S */
 #endif
