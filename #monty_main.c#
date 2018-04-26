@@ -24,10 +24,10 @@ int main(int ac, char **av)
 void file_open(char *file_name, stack_t **stack)
 {
 	char *buff = NULL;
-	int c_test, line;
 	char *new;
 	size_t t = 0;
 	int count = 0;;
+	int c_test, line;
 	instruct instruct;
 
 	FILE *file = fopen(file_name, "r");
