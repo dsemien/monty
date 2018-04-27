@@ -8,7 +8,7 @@
  */
 void c_add(stack_t **stack, unsigned int line_number)
 {
-	if (*stack != NULL)
+	if (*stack != NULL && (*stack)->next != NULL)
 	{
 		(*stack)->next->n += (*stack)->n;
 		c_pop(stack, line_number);
