@@ -16,7 +16,6 @@ int main(int ac, char **av)
 		exit(-1);
 	}
 	file_open(av[1], &new);
-	free(new);
 	return (0);
 }
 /**
