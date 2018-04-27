@@ -74,10 +74,9 @@ instruct op_func(char *line)
 	instruction_t inst[] = {
 		{"push", c_push},
 		{"pall", c_pall},
-		/*
-		 * {"pint", c_pint},
-		 * {"pop", c_pop},
-		 * {"swap", c_swap},
+	        {"pint", c_pint},
+	        {"pop", c_pop},
+		 /* {"swap", c_swap},
 		 * {"add", c_add},
 		 */
 		{"nop", c_nop},
