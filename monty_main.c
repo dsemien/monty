@@ -11,6 +11,11 @@ int main(int ac, char **av)
 	stack_t *new;
 
 	new = NULL;
+	if (ac < 2)
+	{
+		printf("USAGE: monty file");
+		exit(EXIT_FAILURE);
+	}
 	if (ac != 2)
 	{
 		exit(-1);
