@@ -7,7 +7,7 @@
  **/
 int delete_dnodeint_at_index(stack_t **head, unsigned int index)
 {
-        stack_t *ptr;
+	stack_t *ptr;
 	unsigned int i = 0;
 	stack_t *h;
 
