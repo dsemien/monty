@@ -1,5 +1,4 @@
 #include "monty.h"
-extern int c_fetch;
 /**
  * c_push - pushes an element to the stack
  * @stack: double linked list
@@ -12,26 +11,25 @@ void c_push(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
    newNode = malloc(sizeof(stack_t));
    if (newNode == NULL)
    {
-       printf("L%d: usage: push integer\n", line_number);
-        exit(EXIT_FAILURE);
+	   printf("L%d: usage: push integer\n", line_number);
+	   exit(EXIT_FAILURE);
    }
    newNode->n = c_fetch;
    if (*stack == NULL)
    {
-      newNode->next = NULL;
-      newNode->prev = NULL;
-      *stack = newNode;
+	   newNode->next = NULL;
+	   newNode->prev = NULL;
+	   *stack = newNode;
    }
    else
    {
-        (*stack)->prev = newNode;
-        newNode->n = c_fetch;
-        newNode->next = *stack;
-        newNode->prev = NULL;   
-        *stack = newNode;
+	   (*stack)->prev = newNode;
+	   newNode->n = c_fetch;
+	   newNode->next = *stack;
+	   newNode->prev = NULL;   
+	   *stack = newNode;
    }
    free(newNode);
-/* printf("\nInsertion is Success\n"); */
 }
 
 /**
@@ -92,6 +90,5 @@ void c_pop(stack_t **stack, unsigned int line_number)
  */
 void c_nop(__attribute__ ((unused))stack_t **stack, __attribute__((unused))unsigned int line_number)
 {
-	printf("it works\n");
 	return;
 }

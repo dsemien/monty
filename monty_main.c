@@ -31,14 +31,14 @@ void file_open(char *file_name, stack_t **stack)
 	int c_test, line;
 	char *new;
 	size_t t = 0;
-	int count = 0;
+	int count = 1;
 	instruct instruct;
 
 	FILE *file = fopen(file_name, "r");
 
 	if (file == NULL)
 	{
-		printf("Error: Cant opend file\n");
+		printf("Error: Can't open file %s\n", file_name);
 		exit(EXIT_FAILURE);
 	}
 	while ((line = getline(&buff, &t, file)) != -1)
@@ -52,14 +52,13 @@ void file_open(char *file_name, stack_t **stack)
 		instruct = op_func(new);
 		if (instruct == NULL)
 		{
-			printf("Error: Couldn't find correct function\n");
+			printf("L%d: unknown instruction %s\n", count, new);
 			exit(EXIT_FAILURE);
 		}
 		instruct(stack, count);
-		count++;
-	}
+		count++;	}
 	free(new);
-	free(buff);
+
 	c_test = fclose(file);
 	if (c_test == -1)
 		exit(-1);
@@ -110,14 +109,13 @@ char *line_tok(char *str)
 	if (strcmp(line, push) == 0)
 	{
 		var = strtok(NULL, "\n ");
-		if (number(var) == 1 && var != NULL)
+		if (number(var) == 0 && var != NULL)
 		{
 			c_fetch = atoi(var);
 		}
 		else
 		{
 			printf("Error");
-			free(var);
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -127,7 +125,7 @@ char *line_tok(char *str)
 /**
  * number - checks if string is number
  * @buff: user input
- * Return: 0 if ot digit
+ * Return: 0 if digit
  **/
 int number(char *buff)
 {
@@ -144,8 +142,8 @@ int number(char *buff)
 			continue;
 		}
 		if (!isdigit(buff[x]))
-			return (0);
+			return (1);
 		x++;
 	}
-	return (1);
+	return (0);
 }
