@@ -5,7 +5,7 @@
 *
 *
 */
-void c_push(stack_t **stack, __attribute__ ((unsused))unsigned int line_number)
+void c_push(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
 {
    stack_t *newNode;
 
@@ -17,16 +17,19 @@ void c_push(stack_t **stack, __attribute__ ((unsused))unsigned int line_number)
    }
    newNode->n = fetch;
    if (*stack == NULL)
+   {
       newNode->next = NULL;
       newNode->prev = NULL;
       *stack = newNode;
+   }
    else
-    *(stack)->prev = newNode;
-    newNode->n = fetch;
-    newNode->next = *stack;
-    newNode->prev = NULL;   
-   *stack = newNode;
-  
+   {
+        (*stack)->prev = newNode;
+        newNode->n = fetch;
+        newNode->next = *stack;
+        newNode->prev = NULL;   
+        *stack = newNode;
+   }
    printf("\nInsertion is Success\n");
 }
 
@@ -36,7 +39,7 @@ void c_push(stack_t **stack, __attribute__ ((unsused))unsigned int line_number)
 *
 *
 */
-void c_pall(stack_t **stack, __attribute__ ((unsused))unsigned int line_number)
+void c_pall(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
 {
     stack_t *print;
 
@@ -90,7 +93,7 @@ void c_pop(stack_t **stack, unsigned int line_number)
 *
 *
 */
-void c_nop(__attribute__ ((unused))stack_t **stack, __attribute__ ((unused))unsigned int count)
+void c_nop(__attribute__ ((unused))stack_t **stack, __attribute__((unused))unsigned int count)
 {
 	printf("it works\n");
 	return;
