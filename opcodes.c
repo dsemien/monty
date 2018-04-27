@@ -96,6 +96,6 @@ void c_pop(stack_t **stack, unsigned int line_number)
  */
 void c_nop(stack_t **stack, unsigned int line_number)
 {
-        (void) stack;
-        (void) line_number;
+	(void) stack;
+	(void) line_number;
 }
