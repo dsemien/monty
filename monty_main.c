@@ -54,6 +54,7 @@ void file_open(char *file_name, stack_t **stack)
 		count++;
 	}
 	free(new);
+	free(buff);
 	c_test = fclose(file);
 	if (c_test == -1)
 		exit(-1);
@@ -102,6 +103,7 @@ char *line_tok(char *str)
 		else
 		{
 			printf("Error");
+			free(var);
 			exit(EXIT_FAILURE);
 		}
 	}

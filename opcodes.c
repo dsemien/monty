@@ -31,7 +31,8 @@ void c_push(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
         newNode->prev = NULL;   
         *stack = newNode;
    }
-   /* printf("\nInsertion is Success\n"); */
+   free(newNode);
+/* printf("\nInsertion is Success\n"); */
 }
 
 /**
