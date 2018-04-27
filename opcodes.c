@@ -67,10 +67,7 @@ void c_pint(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	if (print_tos != NULL)
-	{
 	    printf("%d\n", print_tos->n);
-	    print_tos = print_tos->next;
-	}
 	else
 	{
 		printf("L%d: can't pint, stack empty\n", line_number);
