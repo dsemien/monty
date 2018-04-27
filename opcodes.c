@@ -95,7 +95,7 @@ void c_pop(stack_t **stack, unsigned int line_number)
  * @stack: double linked list
  * @line_number: line number of opcode
  */
-void c_nop(__attribute__ ((unused))stack_t **stack, __attribute__((unused))unsigned int line_number)
+void c_nop(stack_t **stack, unsigned int line_number)
 {
         (void) stack;
         (void) line_number;
