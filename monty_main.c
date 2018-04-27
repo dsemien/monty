@@ -15,6 +15,11 @@ int main(int ac, char **av)
 	{
 		exit(-1);
 	}
+	else
+	{
+		printf("USAGE: monty file");
+		exit(EXIT_FAILURE);
+	}
 	file_open(av[1], &new);
 	return (0);
 }
