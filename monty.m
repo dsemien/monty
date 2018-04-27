@@ -1,1 +1,4 @@
-push 1 + pall + pint + swap + pop + add + nop
+push 1
+push 2
+push 3
+pall
