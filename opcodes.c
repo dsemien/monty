@@ -97,5 +97,6 @@ void c_pop(stack_t **stack, unsigned int line_number)
  */
 void c_nop(__attribute__ ((unused))stack_t **stack, __attribute__((unused))unsigned int line_number)
 {
-	return;
+        (void) stack;
+        (void) line_number;
 }
