@@ -82,8 +82,8 @@ instruct op_func(char *line)
 		{"pop", c_pop},
 		/**
 		 * {"swap", c_swap},
-		 * {"add", c_add},
-		 */
+		*/
+		{"add", c_add}, 
 		{"nop", c_nop},
 		{NULL, NULL},
 	};
