@@ -1,4 +1,5 @@
 #include "monty.h"
+int c_fetch = 0;
 /**
  * c_push - pushes an element to the stack
  * @stack: double linked list
@@ -11,7 +12,7 @@ void c_push(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
    newNode = malloc(sizeof(stack_t));
    if (newNode == NULL)
    {
-	   printf("L%d: usage: push integer\n", line_number);
+	   printf("Error: malloc failed\n");
 	   exit(EXIT_FAILURE);
    }
    newNode->n = c_fetch;

@@ -1,5 +1,4 @@
 #include "monty.h"
-int c_fetch = 0;
 /**
  * main - starts program to interp. monty file
  * @ac: argument count
