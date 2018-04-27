@@ -8,7 +8,7 @@
 #include <ctype.h>
 
 extern int c_fetch;
-int c_fetch = 0;
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
