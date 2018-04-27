@@ -24,13 +24,13 @@ void c_push(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
    }
    else
    {
-	   (*stack)->prev = newNode;
-	   newNode->n = c_fetch;
+	   /*(*stack)->prev = newNode;*/
+	   /*newNode->n = c_fetch;*/
+	   newNode->prev = NULL;
 	   newNode->next = *stack;
-	   newNode->prev = NULL;   
 	   *stack = newNode;
    }
-   free(newNode);
+   /*free(newNode);*/
 }
 
 /**

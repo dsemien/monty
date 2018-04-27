@@ -57,7 +57,7 @@ void file_open(char *file_name, stack_t **stack)
 		instruct(stack, count);
 		count++;	}
 	free(new);
-
+        free_dlistint(*stack);
 	c_test = fclose(file);
 	if (c_test == -1)
 		exit(-1);
