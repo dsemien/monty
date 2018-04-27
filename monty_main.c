@@ -113,7 +113,7 @@ char *line_tok(char *str)
 		}
 		else
 		{
-			printf("L: usage: push integer");
+			printf("L: usage: push integer\n");
 			exit(EXIT_FAILURE);
 		}
 	}
