@@ -1,5 +1,4 @@
 #include "monty.h"
-int c_fetch = 0;
 /**
  * c_push - pushes an element to the stack
  * @stack: double linked list
