@@ -1,5 +1,5 @@
 #include "monty.h"
-
+int c_fetch = 0;
 /**
  *
  *
@@ -65,9 +65,9 @@ instruct op_func(char *line)
 	int x;
 		
 	instruction_t inst[] = {
-		/*{"push", c_push},
+		{"push", c_push},
 		{"pall", c_pall},
-		{"pint", c_pint},
+		/*{"pint", c_pint},
 		{"pop", c_pop},
 		{"swap", c_swap},
 		{"add", c_add},*/
@@ -79,15 +79,52 @@ instruct op_func(char *line)
 	while(inst[x].f != NULL && strcmp(inst[x].opcode, line) != 0)
 		x++;
 
+
+
 	return (inst[x].f);
 }
 
 char *line_tok(char *str)
 {
-	char *line;
-	
+	char *line, *var, *push;
+
+	push = "push";
 	line = strtok(str, "\n ");
 	if (line == NULL)
 		return (NULL);
+	if (strcmp(line, push) == 0)
+	{
+		var = strtok(NULL, "\n ");
+		if(number(var) == 1 && var != NULL)
+		{
+			c_fetch = atoi(var);
+		}
+		else
+		{
+			printf("Error");
+			exit(EXIT_FAILURE);
+		}
+	}
 	return (line);
+}
+
+int number(char *buff)
+{
+	unsigned int x;
+
+	if (buff == NULL)
+		return(0);
+	x = 0;
+	while (buff[x])
+	{
+		if (buff[0] == '-')
+		{
+			x++;
+			continue;
+		}
+		if (!isdigit(buff[x]))
+			return (0);
+		x++;
+	}
+	return(1);
 }

@@ -1,4 +1,5 @@
 #include "monty.h"
+extern int c_fetch;
 /**
 *
 *
@@ -15,7 +16,7 @@ void c_push(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
        printf("L%d: usage: push integer\n", line_number);
         exit(EXIT_FAILURE);
    }
-   newNode->n = fetch;
+   newNode->n = c_fetch;
    if (*stack == NULL)
    {
       newNode->next = NULL;
@@ -25,12 +26,12 @@ void c_push(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
    else
    {
         (*stack)->prev = newNode;
-        newNode->n = fetch;
+        newNode->n = c_fetch;
         newNode->next = *stack;
         newNode->prev = NULL;   
         *stack = newNode;
    }
-   printf("\nInsertion is Success\n");
+   /* printf("\nInsertion is Success\n"); */
 }
 
 /**

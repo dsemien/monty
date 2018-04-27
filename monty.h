@@ -5,8 +5,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <ctype.h>
 
-extern int fetch;
+extern int c_fetch;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -53,7 +54,7 @@ int delete_dnodeint_at_index(stack_t **head, unsigned int index);
 stack_t *add_dnodeint(stack_t **head, const int n);
 stack_t *add_dnodeint_end(stack_t **head, const int n);
 void free_dlistint(stack_t *head);
-
+int number(char *buff);
 
 /* END DEF'S */
 #endif
