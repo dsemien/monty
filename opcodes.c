@@ -1,10 +1,9 @@
 #include "monty.h"
 /**
-*
-*
-*
-*
-*/
+ * c_push - pushes an element to the stack
+ * @stack: double linked list
+ * @line_number: line number of opcode
+ */
 void c_push(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
 {
    stack_t *newNode;
@@ -34,11 +33,10 @@ void c_push(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
 }
 
 /**
-*
-*
-*
-*
-*/
+ * c_pall - prints all the values on the stack
+ * @stack: double linked list
+ * @line_number: line number of opcode
+ */
 void c_pall(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
 {
     stack_t *print;
@@ -53,11 +51,10 @@ void c_pall(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
 }
 
 /**
-*
-*
-*
-*
-*/
+ * c_pint - prints the value at the top of the stack
+ * @stack: double linked list
+ * @line_number: line number of opcode
+ */
 void c_pint(stack_t **stack, unsigned int line_number)
 {
     stack_t *print_tos;
@@ -72,11 +69,10 @@ void c_pint(stack_t **stack, unsigned int line_number)
 }
 
 /**
-*
-*
-*
-*
-*/
+ * c_pop - removes the top element of the stack.
+ * @stack: double linked list
+ * @line_number: line number of opcode
+ */
 void c_pop(stack_t **stack, unsigned int line_number)
 {
     if (*stack == NULL)
@@ -88,12 +84,11 @@ void c_pop(stack_t **stack, unsigned int line_number)
 }
 
 /**
-*
-*
-*
-*
-*/
-void c_nop(__attribute__ ((unused))stack_t **stack, __attribute__((unused))unsigned int count)
+ * c_nop - doesn’t do anything.
+ * @stack: double linked list
+ * @line_number: line number of opcode
+ */
+void c_nop(__attribute__ ((unused))stack_t **stack, __attribute__((unused))unsigned int line_number)
 {
 	printf("it works\n");
 	return;
