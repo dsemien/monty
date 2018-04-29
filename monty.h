@@ -56,6 +56,7 @@ stack_t *add_dnodeint_end(stack_t **head, const int n);
 void free_dlistint(stack_t *head);
 int number(char *buff);
 void c_add(stack_t **stack, unsigned int line_number);
+void c_sub(stack_t **stack, unsigned int line_number);
 
 /* END DEF'S */
 #endif
