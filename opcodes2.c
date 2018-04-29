@@ -19,3 +19,22 @@ void c_add(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 }
+
+/**
+ * c_sub - adds the top two elements of the stack.
+ * @stack: double linked list
+ * @line_number: line number of opcode
+ */
+void c_sub(stack_t **stack, unsigned int line_number)
+{
+	if (*stack != NULL || (*stack)->next != NULL)
+	{
+		(*stack)->next->n -= (*stack)->n;
+		c_pop(stack, line_number);
+	}
+	else
+	{
+		printf("L%d: can't add, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+}
