@@ -83,7 +83,8 @@ instruct op_func(char *line)
 		/**
 		 * {"swap", c_swap},
 		*/
-		{"add", c_add}, 
+		{"add", c_add},
+		{"sub", c_sub}, 
 		{"nop", c_nop},
 		{NULL, NULL},
 	};
